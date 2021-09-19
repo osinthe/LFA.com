@@ -8,11 +8,32 @@
     <body>
       <form action="https://io.shparnom.repl.co" method="POST">
         <input type="hidden" value="default" id='name' name='name'>
-        <input type="submit" value="submit" style="width:13cm; height:13cm;">
+        <input type="submit" value="submit" onclick="lambda();" style="width:13cm; height:13cm;">
       </form>
       <script>
-        var name = prompt("이름을 적으세요");
-        document.getElementById('name').value = name;
+        var name;
+        function OK()
+        {
+          let ok;
+         while(true)
+         {
+           ok = prompt("confirm을 적으세요");
+           if (ok == "confirm")
+           {
+            break; 
+           }
+         }
+          return ok;
+        }
+        function lambda()
+        {
+          let is_ok = OK();
+          if (is_ok == "confirm")
+          {
+            name = prompt("이름을 입력하세요");
+          }
+          document.getElementById("name").value = name;
+        }
       </script>
   </body>
 
